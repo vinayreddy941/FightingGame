@@ -123,20 +123,6 @@ document.addEventListener('keydown', function(e) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // For Lance (Player 1)
 document.getElementById('attack').addEventListener('click', function() {
   player1.strike(player1, player2, player1.attackDmg);
@@ -174,6 +160,9 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+
+
+
 // Keyboard event listeners for Gazi (Player 2)
 document.addEventListener('keydown', function(e) {
   if (e.key == "p") {
@@ -186,5 +175,31 @@ document.addEventListener('keydown', function(e) {
   if (e.key == "l") {
       player2.heal(player2);
       document.getElementById('p2heal').play();
+  }
+});
+
+
+
+document.addEventListener('keydown', function(e) {
+  if (p1.health > 0 && game.isOver === false) {
+    if (e.key === "q") {
+      player1.strike(player1, player2, player1.attackDmg);
+      document.getElementById('p1attack').play();
+    } else if (e.key === "a") {
+      player1.heal(player1);
+      document.getElementById('p1heal').play();
+    }
+  }
+});
+
+document.addEventListener('keydown', function(e) {
+  if (p2.health > 0 && game.isOver === false) {
+    if (e.key === "p") {
+      player2.strike(player2, player1, player2.attackDmg);
+      document.getElementById('p2attack').play();
+    } else if (e.key === "l") {
+      player2.heal(player2);
+      document.getElementById('p2heal').play();
+    }
   }
 });
