@@ -120,6 +120,17 @@ body {
   cursor: pointer;
 }
 
+#heal{
+  height: 30px;
+  width: 60px;
+  border-radius: 50px;
+  border:none;
+  background: #7DFFFF;
+  outline: none;
+  cursor: pointer;
+
+}
+
 
 #play {
   height: 50px;
